@@ -38,4 +38,6 @@ export const logout = () => async (dispatch, getState) => {
     dispatch({ type: LOGOUT });
   }
 };
+
+
 // END AUTH ACTIONS
