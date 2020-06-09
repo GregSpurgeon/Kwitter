@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import ProptTypes from "prop-types";
 import "./register.css"
 import {Link} from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
+
 
 
 export const Register =({register})=>{
@@ -25,11 +27,14 @@ export const Register =({register})=>{
 
     return (
       <React.Fragment>
+        <h2 id="title">Welcome to Kwitter,</h2>
+        <h5 id="title-sub">let's get startered</h5>
         <form id="register-form" onSubmit={handleRegister}>
             <label id="formElement" htmlFor="username">Username</label>
             <input 
               type="text"
               name="username"
+              placeholder="Enter your username or email here"
               value={state.username}
               autoFocus
               required
@@ -39,6 +44,7 @@ export const Register =({register})=>{
             <input 
               type="text"
               name="displayName"
+              placeholder="Name that will be displayed to others"
               value={state.displayName}
               autoFocus
               required
@@ -48,20 +54,26 @@ export const Register =({register})=>{
             <input 
               type="password"
               name="password"
+              placeholder="Must be between 3-10 Characters"
               value={state.password}
               required
               onChange={handleChange}
             />
             <br/>
-            <button 
+            <Button
+              variant="outline-primary" 
+              size="sm"
               id='fromElement' 
               type="submit" 
             > 
               Register
-            </button>
-
+            </Button>
+           <div id="footer">
+             <Link to="/">return Home Page</Link>
+          </div> 
         </form>
-        <Link to="/">return Home Page</Link>
+
+       
       </React.Fragment>
     );
 
