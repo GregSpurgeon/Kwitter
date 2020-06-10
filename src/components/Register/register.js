@@ -72,8 +72,6 @@ export const Register =({register})=>{
              <Link to="/">return Home Page</Link>
           </div> 
         </form>
-
-       
       </React.Fragment>
     );
 
