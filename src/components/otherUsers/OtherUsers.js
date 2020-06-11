@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import ProptTypes from "prop-types";
 import "./OtherUsers.css"
 
-export const OtherUsers =({otherUsers,users})=>{
+export const OtherUsers =({users})=>{
   
   const results = users
   useEffect(()=>{
