@@ -14,7 +14,6 @@ export const PostMessage =({postMessageCall})=>{
   const handlePost = (event) => {
     event.preventDefault();
     postMessageCall(state);
-    // console.log('i ran')
   };
 
   const handleChange = (event) => {
@@ -26,13 +25,14 @@ export const PostMessage =({postMessageCall})=>{
   return(
     <React.Fragment>
       
-      <Card>
-        {/* <Card.Title>{message.username}</Card.Title> */}
-        <Card.Body> 
+      <Card id="card">
+        <Card.Title id="card-title">Create a Message</Card.Title>
+        <Card.Body id= "card-body"> 
           <form onSubmit={handlePost}>
-            <input 
+            <textarea id="card-input"
               type="text"
               name="text"
+              size="lg"
               placeholder="type your message"
               value={state.text}
               autoFocus

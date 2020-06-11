@@ -1,5 +1,26 @@
 
-Card{
+#card{
   display:inline-flex;
-  width:300px;
+  width:30%;
+  border:solid grey 2px
+}
+
+#card-title{
+color:teal;
+text-align: center;
+}
+#card-body{
+}
+#card-input{
+  width:100%;
+}
+
+textarea::-webkit-scrollbar-thumb{
+  width: 12px;
+  color:blue
+}
+
+textarea{
+  height:100px;
+  width:100%
 }
