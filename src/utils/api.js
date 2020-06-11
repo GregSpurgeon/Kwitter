@@ -82,6 +82,17 @@ class API {
       return err;
     }
   }  
+  async postMessageAPI ({text}){
+    try{
+      const result = await this.axiosInstance.post("/messages",{
+         text
+      });
+        return result
+    }catch(err){
+      helpMeInstructor(err);
+      return err;
+      }
+    }
 
   }  
 

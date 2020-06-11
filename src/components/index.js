@@ -4,3 +4,4 @@ export * from "./menu";
 export * from "./navigation";
 export * from "./Register"
 export * from "./otherUsers"
+export * from "./post-message"
