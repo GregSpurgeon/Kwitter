@@ -13,7 +13,7 @@ export const UserCard = ({getUser,username,displayName, about, pictureLocation})
 
     const [state, setState] = useState({username, displayName, about});
     
-    useEffect(() => {getUser(params.username)}, [] );    
+    useEffect(() => {getUser(params.username)}, [getUser] );    
     // console.log(displayName)
     return(
     <Card style={{ width: '24rem' }}>
