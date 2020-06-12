@@ -3,7 +3,7 @@ import "./OtherUsers.css"
 
 export const OtherUsers =({users})=>{
   
-  const results = users
+  // const results = users
   
   useEffect(()=>{
     const fetchData = async () => {
@@ -17,8 +17,8 @@ export const OtherUsers =({users})=>{
     <React.Fragment>
       <div>
         <h3 id="title-users">Other Users</h3>
-         {results.map((user,index)=>(
-           <div id="users" key={index}> {user.username}</div>
+         {users.map((users,index)=>(
+           <div id="users" key={index}> {users.username}</div>
          
          ))}
       </div>
