@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import ProptTypes from "prop-types";
 import "./OtherUsers.css"
 
 export const OtherUsers =({users})=>{
   
   const results = users
+  
   useEffect(()=>{
     const fetchData = async () => {
       // console.log(results)

@@ -5,3 +5,4 @@ export * from "./navigation";
 export * from "./Register"
 export * from "./otherUsers"
 export * from "./post-message"
+export * from "./like"

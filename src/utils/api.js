@@ -94,6 +94,18 @@ class API {
       }
     }
 
+    async likeMessageAPI ({messageId}){
+      try{
+        const result = await this.axiosInstance.post("/likes",{
+          messageId
+        });
+          return result
+      }catch(err){
+        helpMeInstructor(err);
+        return err;
+        }
+      }
+
   }  
 
 // WARNING.. do not touch below this line if you want to have a good day =]
