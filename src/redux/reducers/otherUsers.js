@@ -2,7 +2,7 @@ import {  RETRIEVE_OTHER_USERS, RETRIEVE_OTHER_USERS_SUCCESS, RETRIEVE_OTHER_USE
 
 const INITIAL_STATE= {
     loading:false,
-    username:"",
+    users:[],
 }
 
 export const otheruserReducer =(state= INITIAL_STATE, action) =>{
@@ -13,8 +13,8 @@ export const otheruserReducer =(state= INITIAL_STATE, action) =>{
         loading: true,
       };
     case RETRIEVE_OTHER_USERS_SUCCESS:
-      const{users}= action.payload;
-      // console.log(action.payload.users)
+      const {users} = action.payload;
+      // console.log(users)
       return{
         ...INITIAL_STATE,
         loading:false,

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ProptTypes from "prop-types";
 import "./Post-message.css"
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -14,12 +13,14 @@ export const PostMessage =({postMessageCall})=>{
   const handlePost = (event) => {
     event.preventDefault();
     postMessageCall(state);
+    setState((prevState) => ({ ...prevState, text: '' }));
   };
 
   const handleChange = (event) => {
     const inputName = event.target.name;
     const inputValue = event.target.value;
     setState((prevState) => ({ ...prevState, [inputName]: inputValue }));
+    
   };
   
   return(
