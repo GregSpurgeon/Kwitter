@@ -4,8 +4,6 @@ import "./register.css"
 import {Link} from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 
-
-
 export const Register =({register})=>{
   const [state, setState] = useState({
     username: "",

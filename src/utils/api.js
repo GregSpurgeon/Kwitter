@@ -34,6 +34,27 @@ class API {
 
     this.axiosInstance = axiosInstance;
   }
+  async getUser(username){
+    try {
+      const result = await this.axiosInstance.get(`/users/${username}`)
+      console.log(result)
+      return result; 
+      
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+
+  async editUser(username, displayName, about){
+    try {
+      const result = await this.axiosInstance.patch(`/users/${username}`, {displayName, about})
+      console.log(result)
+      return result; 
+      
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
 
   async login({ username, password }) {
     try {
@@ -43,6 +64,7 @@ class API {
       });
       return result;
     } catch (err) {
+   
       // Instructor is logging you out because this failed
       helpMeInstructor(err);
       return err;

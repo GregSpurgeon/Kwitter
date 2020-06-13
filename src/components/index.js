@@ -2,7 +2,8 @@ export * from "./loader";
 export * from "./login-form";
 export * from "./menu";
 export * from "./navigation";
-export * from "./Register"
-export * from "./otherUsers"
-export * from "./post-message"
-export * from "./like"
+export * from "./Register";
+export * from "./users";
+export * from "./otherUsers";
+export * from "./post-message";
+export * from "./like";
