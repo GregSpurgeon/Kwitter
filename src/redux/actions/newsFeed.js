@@ -6,10 +6,10 @@ export const NEWS_FEED_FAILURE = "NEWS_FEED_FAILURE";
 
 export const getMessages = () => async (dispatch, getState) => {
   try {
-    console.log("We are going into the Actions.")
+    // console.log("We are going into the Actions.")
     dispatch({ type: NEWS_FEED });
     const payload = await api.newsFeed();
-    console.log(payload)
+    // console.log(payload)
     dispatch({ 
         type: NEWS_FEED_SUCCESS,
          payload });

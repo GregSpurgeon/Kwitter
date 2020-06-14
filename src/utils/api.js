@@ -48,7 +48,7 @@ class API {
   async editUser(username, displayName, about){
     try {
       const result = await this.axiosInstance.patch(`/users/${username}`, {displayName, about})
-      console.log(result)
+      // console.log(result)
       return result; 
       
     } catch (err) {
@@ -117,10 +117,12 @@ class API {
     }
 
     async likeMessageAPI ({messageId}){
+      console.log(messageId)
       try{
         const result = await this.axiosInstance.post("/likes",{
           messageId
         });
+        
           return result
       }catch(err){
         helpMeInstructor(err);

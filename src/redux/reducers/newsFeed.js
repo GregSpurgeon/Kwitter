@@ -20,7 +20,7 @@ messages: [],
   loading: false,
 };
 export const newsFeedReducer=(state = INTIAL_STATE, action)=> {
-    console.log("We are going into the reducer.")
+    // console.log("We are going into the reducer.")
   switch (action.type) {
     case NEWS_FEED:
       return {
@@ -29,7 +29,7 @@ export const newsFeedReducer=(state = INTIAL_STATE, action)=> {
       };
     case NEWS_FEED_SUCCESS:
         const messages = action.payload
-        console.log(action.payload)
+        // console.log(action.payload)
       return {
         ...state,
         messages,
