@@ -42,8 +42,8 @@ export const userReducer = (state = INITIAL_STATE, action) => {
         loading: true,
       };
     case EDITUSER_SUCCESS:
-      // console.log("insideReducer GetUserSuccess")
-      // console.log(action.payload)
+      console.log("insideReducer GetUserSuccess")
+      console.log(action.payload)
       return {
         ...INITIAL_STATE,
         username: action.payload.user.username,

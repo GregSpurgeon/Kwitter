@@ -4,7 +4,7 @@ import "./OtherUsers.css"
 export const OtherUsers =({otherUsers,users})=>{
   
   // const results = users
-  console.log(users)
+  // console.log(users)
   
   useEffect(()=>{
     otherUsers()
