@@ -11,7 +11,7 @@ export const otherUsers = (OtherUserData) => async (dispatch, getState) => {
     dispatch({ type: RETRIEVE_OTHER_USERS });
     const payload = await api.otherUsers(OtherUserData);
     // ℹ️ℹ️This is how you woud debug the response to a requestℹ️ℹ️
-    console.log({ payload })
+    // console.log({ payload })
     dispatch({ type: RETRIEVE_OTHER_USERS_SUCCESS, payload });
   } catch (err) {
     dispatch({
