@@ -35,6 +35,7 @@ export const editUser = (credentials) => async (dispatch, getState) => {
   try {
     dispatch({ type: EDITUSER });
     const payload = await api.editUser(credentials);
+    // console.log(payload)
     
     // ℹ️ℹ️This is how you woud debug the response to a requestℹ️ℹ️
     // console.log({ result })
