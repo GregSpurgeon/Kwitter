@@ -2,12 +2,11 @@ import React, { useEffect } from "react";
 import PropType from "prop-types";
 import Card from "react-bootstrap/Card";
 import {Loader} from "../loader"
-import { render } from "@testing-library/react";
 import Button from 'react-bootstrap/Button'
 import "./NewsFeed.css"
 
 
-export const NewsFeed = ({ getMessages, messages,loading }) => {
+export const NewsFeed = ({ getMessages,likeMessage, messages,loading }) => {
   useEffect(() => {
     // const fetchData = async () => {
     //   // console.log(results)
@@ -15,7 +14,15 @@ export const NewsFeed = ({ getMessages, messages,loading }) => {
     // fetchData();
     getMessages();
   }
-  ,[])
+  ,[messages])
+
+  const handleLike = (event,likemessage) => {
+    console.log(likemessage)
+    console.log(event.target.value)
+    event.preventDefault();
+    likeMessage({"messageId":parseInt(event.target.value)});
+    console.log('I ran correctly ')
+  };
   
 // console.log(messages)
   // console.log(state)
@@ -23,6 +30,7 @@ export const NewsFeed = ({ getMessages, messages,loading }) => {
   return (
     <React.Fragment>
 {messages.map((message) => {
+  console.log(message)
             return (
               <React.Fragment>
               <Card
@@ -37,13 +45,15 @@ export const NewsFeed = ({ getMessages, messages,loading }) => {
                  id= "card-body">
              {message.text}  
                 </Card.Body>
-                <Button
-                  // onClick={}
+                <Button 
+                onClick={handleLike}
                  type="button"
-                 size="sm"
-                id="like-button">
+                 value={message.id}
+                  id="like-button">
                     <i class="fa fa-thumbs-o-up"></i> Like
                     </Button>
+                    <span id="like-count">{message.likes.length}</span>
+                    
               </Card>
               <br/>
             </React.Fragment>

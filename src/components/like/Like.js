@@ -1,11 +1,9 @@
-import React,{useState} from 'react';
+import React from 'react';
 import "./Like.css"
 
 
-export const LikeMessage =({likeMessage})=>{
-const [state, setState]=useState({
-  messageId:0
-});
+export const LikeMessage =()=>{
+
 
  const handleLike = (event) => {
   event.preventDefault();

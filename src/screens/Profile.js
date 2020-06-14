@@ -1,8 +1,6 @@
 import React from "react";
 import { MenuContainer } from "../components";
 import { UserCardContainer } from "../components";
-
-
 import {OtherUsersContainer} from "../components"
 
 
