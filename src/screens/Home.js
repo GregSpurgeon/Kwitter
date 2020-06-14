@@ -2,6 +2,7 @@ import React from "react";
 import { LoginFormContainer, MenuContainer } from "../components";
 import {Link} from 'react-router-dom'
 
+
 export const HomeScreen = () => (
   <>
     <MenuContainer />
@@ -11,5 +12,6 @@ export const HomeScreen = () => (
     <h6>New to us?&nbsp;
       <Link to="/register">SignUp Here</Link>
     </h6>
+    
   </>
 );

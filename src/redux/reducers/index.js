@@ -4,6 +4,7 @@ import { userReducer } from "./users";
 import { otheruserReducer } from "../reducers/otherUsers";
 import {postMessageReducer } from "../reducers/post-messgae";
 import {likeReducer} from "../reducers/like";
+import {newsFeedReducer} from "../reducers/newsFeed"
 
 
 export default combineReducers({ 
@@ -11,5 +12,7 @@ export default combineReducers({
   Other: otheruserReducer,
   postMsg:postMessageReducer,
   users:userReducer,
-  like:likeReducer
+  like:likeReducer,
+  newsFeed: newsFeedReducer,
  });
+

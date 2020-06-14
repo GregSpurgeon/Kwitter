@@ -128,7 +128,19 @@ class API {
         }
       }
 
+      async newsFeed(){
+        try {
+          const results = await this.axiosInstance.get("/messages");
+          console.log("api.js line 64 resutls: ", results.messages)
+         return  results.messages
+    
+         } catch (err){
+            helpMeInstructor(err);
+            return err
+          }
+      }
   }  
+
 
 // WARNING.. do not touch below this line if you want to have a good day =]
 
