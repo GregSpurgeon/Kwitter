@@ -3,6 +3,7 @@ import PropType from "prop-types";
 import Card from "react-bootstrap/Card";
 import {Loader} from "../loader"
 import Button from 'react-bootstrap/Button'
+import "./NewsFeed.css"
 
 
 export const NewsFeed = ({ getMessages,likeMessage, messages,loading }) => {
