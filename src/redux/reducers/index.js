@@ -1,4 +1,7 @@
 import { combineReducers } from "redux";
 import { authReducer } from "./auth";
-
-export default combineReducers({ auth: authReducer });
+import {newsFeedReducer} from "./newsFeed"
+export default combineReducers({ 
+    auth: authReducer,
+    newsFeed: newsFeedReducer, 
+});
