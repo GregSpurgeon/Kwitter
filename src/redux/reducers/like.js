@@ -2,7 +2,7 @@ import {  LIKE_MESSAGE, LIKE_MESSAGE_SUCCESS, LIKE_MESSAGE_FAILURE } from "../ac
 
 const INITIAL_STATE= {
     loading:false,
-    messageId:"",
+    messageId:0,
 }
 
 export const likeReducer =(state= INITIAL_STATE, action) =>{

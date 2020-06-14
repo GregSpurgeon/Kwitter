@@ -4,13 +4,16 @@ import "./Like.css"
 
 export const LikeMessage =({likeMessage})=>{
 const [state, setState]=useState({
-  messageId:0
+  messageId:0,
+  count:0
 });
 
 const handleLike = (event) => {
   event.preventDefault();
   likeMessage(state);
-  setState((prevState) => ({ ...prevState, messageId:"" }));
+  setState((prevState) => ({ ...prevState,
+     messageId:"", 
+    count:state.count +1}));
 };
 
 
