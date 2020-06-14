@@ -37,7 +37,6 @@ export const UserCard = ({getUser,editUser,username,displayName, about, pictureL
                     <ListGroup.Item>About Me: {about} </ListGroup.Item>
             </ListGroup>   
         </Card>
-
         <form id="update-form" onSubmit={handleEditUser}>
             <label id="formElement" htmlFor="username">Username</label>
             <input 
