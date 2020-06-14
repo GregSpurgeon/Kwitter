@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import {Loader} from "../loader"
 import { render } from "@testing-library/react";
 import Button from 'react-bootstrap/Button'
+import "./NewsFeed.css"
 
 
 export const NewsFeed = ({ getMessages, messages,loading }) => {
@@ -16,7 +17,7 @@ export const NewsFeed = ({ getMessages, messages,loading }) => {
   }
   ,[])
   
-console.log(messages)
+// console.log(messages)
   // console.log(state)
 
   return (
@@ -36,11 +37,13 @@ console.log(messages)
                  id= "card-body">
              {message.text}  
                 </Card.Body>
-                <button
+                <Button
+                  // onClick={}
                  type="button"
-                  id="like-button">
+                 size="sm"
+                id="like-button">
                     <i class="fa fa-thumbs-o-up"></i> Like
-                    </button>
+                    </Button>
               </Card>
               <br/>
             </React.Fragment>

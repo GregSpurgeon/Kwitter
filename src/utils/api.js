@@ -37,7 +37,7 @@ class API {
   async getUser(username){
     try {
       const result = await this.axiosInstance.get(`/users/${username}`)
-      console.log(result)
+      // console.log(result)
       return result; 
       
     } catch (err) {
@@ -48,7 +48,7 @@ class API {
   async editUser(username, displayName, about){
     try {
       const result = await this.axiosInstance.patch(`/users/${username}`, {displayName, about})
-      console.log(result)
+      // console.log(result)
       return result; 
       
     } catch (err) {
@@ -131,7 +131,7 @@ class API {
       async newsFeed(){
         try {
           const results = await this.axiosInstance.get("/messages");
-          console.log("api.js line 64 resutls: ", results.messages)
+          // console.log("api.js line 64 resutls: ", results.messages)
          return  results.messages
     
          } catch (err){
