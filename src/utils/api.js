@@ -132,7 +132,7 @@ class API {
       async newsFeed(){
         try {
           const results = await this.axiosInstance.get("/messages");
-          console.log("api.js line 64 resutls: ", results.messages)
+          // console.log("api.js line 64 resutls: ", results.messages)
          return  results.messages
     
          } catch (err){

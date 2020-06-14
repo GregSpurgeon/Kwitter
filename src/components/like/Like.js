@@ -7,22 +7,18 @@ const [state, setState]=useState({
   messageId:0
 });
 
-const handleLike = (event) => {
+ const handleLike = (event) => {
   event.preventDefault();
   likeMessage(state);
   setState((prevState) => ({ ...prevState, messageId:"" }));
+  console.log("i ran")
 };
 
 
 
 return(
   <React.Fragment>
-    <button
-      onClick={handleLike}
-    > 
-      thumbs-up
-    </button>
-    <div>{state.count}</div>
+   
   </React.Fragment>
 )
 }

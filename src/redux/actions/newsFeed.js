@@ -9,7 +9,7 @@ export const getMessages = () => async (dispatch, getState) => {
     console.log("We are going into the Actions.")
     dispatch({ type: NEWS_FEED });
     const payload = await api.newsFeed();
-    console.log(payload)
+    // console.log(payload)
     dispatch({ 
         type: NEWS_FEED_SUCCESS,
          payload });
