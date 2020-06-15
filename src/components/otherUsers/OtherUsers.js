@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import "./OtherUsers.css"
+import { Link } from "react-router-dom";
 
 export const OtherUsers =({otherUsers,users})=>{
   
@@ -12,10 +13,10 @@ export const OtherUsers =({otherUsers,users})=>{
     
   return(
     <React.Fragment>
-      <div>
+      <div id="users-container">
         <h3 id="title-users">Other Users</h3>
          {users.map((user,index)=>(
-           <div id="users" key={index}> {user.username}</div>
+           <span id="users" key={index}><Link to={`/profiles/${user.username}`}>{user.username}</Link></span>
          
          ))}
       </div>

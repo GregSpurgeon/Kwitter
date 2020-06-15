@@ -24,19 +24,22 @@ export const NewsFeed = ({ getMessages,likeMessage, messages,loading }) => {
     console.log('I ran correctly ')
   };
   
+  
 // console.log(messages)
   // console.log(state)
 
   return (
     <React.Fragment>
+      <h5 id="message-header">Message Feed</h5>
 {messages.map((message) => {
-  console.log(message)
+ 
             return (
               <React.Fragment>
+            <div id="card-container">    
               <Card
                id="card"
                key={message.id}
-                style={{width: '18rem'}}>
+                style={{width: '30%'}}>
                 <Card.Title
                  id="card-title">
                   {message.username}
@@ -48,13 +51,14 @@ export const NewsFeed = ({ getMessages,likeMessage, messages,loading }) => {
                 <Button 
                 onClick={handleLike}
                  type="button"
+                 size="sm"
                  value={message.id}
                   id="like-button">
                     <i class="fa fa-thumbs-o-up"></i> Like
                     </Button>
                     <span id="like-count">{message.likes.length}</span>
-                    
               </Card>
+            </div>
               <br/>
             </React.Fragment>
             );

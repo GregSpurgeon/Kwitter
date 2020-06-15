@@ -26,7 +26,7 @@ export const PostMessage =({postMessageCall})=>{
   return(
     <React.Fragment>
       
-      <Card id="card">
+      <Card id="card-post">
         <Card.Title id="card-title">Create a Message</Card.Title>
         <Card.Body id= "card-body"> 
           <form onSubmit={handlePost}>

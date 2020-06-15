@@ -1,15 +1,23 @@
 #title-users{
   display:flex;
-  justify-content:flex-end;
+  justify-content:flex-start;
   color:slategray;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin-right:3%
+  margin-left:7%;
+
 }
 #users{
   display:flex;
+  flex-direction:column;
   justify-content: flex-end;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin-right:6%;
+  margin-left:6%;
   font-size: larger;
-  color:teal
+  color:teal;
+  width:20%;
+  background-color: rgba(105, 105, 105, 0.14);
+  border: grey solid 1px;
+  border-radius: 5px;
+  text-align: center;
 }
+

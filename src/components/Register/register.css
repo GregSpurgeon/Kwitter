@@ -11,22 +11,33 @@
 }
 
 #formElement{
-  color: rgb(25, 168, 142);
+  color:turquoise;
   font-size: 25px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 #title{
 text-align: center;
 font-weight: bold;
-color:turquoise;
+color: rgb(25, 168, 142);
 margin-top:5%;
 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 #title-sub{
   text-align: center;
   color:grey;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 #footer{
   text-align: center;
   padding-top: 5%;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+#register-input{
+  border-radius: 12px;
+  border: solid slategray 1px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+#register-button{
+  border-radius: 15px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }

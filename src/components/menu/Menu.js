@@ -3,7 +3,8 @@ import ProptTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./Menu.css";
 
-export const Menu = ({ isAuthenticated, logout }) => {
+export const Menu = ({ isAuthenticated, username, getUser, logout }) => {
+
   return (
     <div id="menu">
       <h1>Kwitter</h1>
@@ -13,6 +14,7 @@ export const Menu = ({ isAuthenticated, logout }) => {
           <Link to="/" onClick={logout}>
             Logout
           </Link>
+          <Link to={`/profiles/${username}`}>Profile</Link>
         </div>
       )}
     </div>
