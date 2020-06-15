@@ -5,6 +5,8 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import {Card} from "react-bootstrap";
 import PropTypes from "prop-types";
+import "./UserCard.css"
+
 
 
 export const UserCard = ({getUser,editUser,username,displayName, about, pictureLocation}) => {
@@ -29,38 +31,43 @@ export const UserCard = ({getUser,editUser,username,displayName, about, pictureL
     // console.log(displayName)
     return(
     <React.Fragment>
+      <div id="profile">
         <Card style={{ width: '24rem' }}>
-            <Card.Header>PROFILE</Card.Header>
+            <Card.Header id="output">PROFILE</Card.Header>
                 <ListGroup variant="flush">
-                    <ListGroup.Item>{displayName}</ListGroup.Item>
-                    <ListGroup.Item>@{params.username}</ListGroup.Item>
-                    <ListGroup.Item>About Me: {about} </ListGroup.Item>
+                    <ListGroup.Item id="output">{displayName}</ListGroup.Item>
+                    <ListGroup.Item id="output">@{params.username}</ListGroup.Item>
+                    <ListGroup.Item id="output">About Me: {about} </ListGroup.Item>
             </ListGroup>   
         </Card>
+      </div>
         <form id="update-form" onSubmit={handleEditUser}>
             <label id="formElement" htmlFor="username">Username</label>
             <input 
               type="text"
               name="username"
+              size="lg"
               placeholder="Enter Your Username"
               value={state.username}
               autoFocus
               required
               onChange={handleChange}
-            />
+            /><br/>
             <label id="formElement" htmlFor="displayName">DisplayName</label>
             <input 
               type="text"
+              size="lg"
               name="displayName"
               placeholder="Enter New Display Name"
               value={state.displayName}
               autoFocus
               required
               onChange={handleChange}
-            />
+            /><br/>
             <label id="formElement" htmlFor="about">About</label>
             <input 
               type="text"
+              size="lg"
               name="about"
               placeholder="All Ears"
               value={state.about}

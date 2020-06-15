@@ -29,7 +29,7 @@ export const Register =({register})=>{
         <h5 id="title-sub">let's get startered</h5>
         <form id="register-form" onSubmit={handleRegister}>
             <label id="formElement" htmlFor="username">Username</label>
-            <input 
+            <input id="register-input"
               type="text"
               name="username"
               placeholder="Enter your username or email here"
@@ -39,7 +39,7 @@ export const Register =({register})=>{
               onChange={handleChange}
             />
             <label id="formElement" htmlFor="displayName">DisplayName</label>
-            <input 
+            <input id="register-input"
               type="text"
               name="displayName"
               placeholder="Name that will be displayed to others"
@@ -49,7 +49,7 @@ export const Register =({register})=>{
               onChange={handleChange}
             />
             <label id="formElement" htmlFor="password">Password</label>
-            <input 
+            <input id="register-input"
               type="password"
               name="password"
               placeholder="Must be between 3-10 Characters"
@@ -61,7 +61,7 @@ export const Register =({register})=>{
             <Button
               variant="outline-primary" 
               size="sm"
-              id='fromElement' 
+              id='register-button' 
               type="submit" 
             > 
               Register

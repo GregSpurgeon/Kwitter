@@ -5,11 +5,13 @@
     align-items: center;
     padding: 0 1em;
     border-radius: 1em;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
   }
   
   #menu-links {
     display: flex;
     padding-left: 1em;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
   }
   
   #menu-links a {
@@ -17,5 +19,6 @@
     color: darkblue;
     text-decoration: underline;
     cursor: pointer;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
   }
   

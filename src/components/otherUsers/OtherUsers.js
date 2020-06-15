@@ -12,10 +12,10 @@ export const OtherUsers =({otherUsers,users})=>{
     
   return(
     <React.Fragment>
-      <div>
+      <div id="users-container">
         <h3 id="title-users">Other Users</h3>
          {users.map((user,index)=>(
-           <div id="users" key={index}> {user.username}</div>
+           <span id="users" key={index}> {user.username}</span>
          
          ))}
       </div>

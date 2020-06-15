@@ -1,0 +1,24 @@
+#profile{
+  display:inline-flex;
+  color:teal;
+  padding:5%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#output{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: rgba(105, 105, 105, 0.14);
+  border: grey solid 1px;
+  border-radius: 15px;
+}
+
+#update-form{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-radius: 20px;
+  display:inline-flex;
+  flex-direction:column;
+  width:30%;
+  background-color: rgba(105, 105, 105, 0.14);
+  padding:1%;
+  padding-top:-10%;
+  border: black solid 1px;
+}
