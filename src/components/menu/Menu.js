@@ -14,7 +14,7 @@ export const Menu = ({ isAuthenticated, username, getUser, logout }) => {
           <Link to="/" onClick={logout}>
             Logout
           </Link>
-          <Link to="/profiles/:username">Profile</Link>
+          <Link to={`/profiles/${username}`}>Profile</Link>
         </div>
       )}
     </div>

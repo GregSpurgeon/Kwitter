@@ -2,9 +2,11 @@ import { connect } from "react-redux";
 import { logout } from "../../redux/actions/auth";
 import { getUser} from "../../redux/actions/users"
 
+
 const mapStateToProps = (state) => ({
   isAuthenticated: !!state.auth.isAuthenticated,
-  username: state.users.username,
+  username: state.auth.username,
+  
 });
 
 const mapDispatchToProps = {

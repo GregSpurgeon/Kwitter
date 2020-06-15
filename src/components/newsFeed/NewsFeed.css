@@ -5,15 +5,13 @@ color:darksl
 #card-container{
   display:flex;
   justify-content:center;
-  
-  
 }
 #card{
     border-radius: 10px;
     display:flex;
     flex-direction: column;
     justify-content:center;
-    width:40%;
+    width:50%;
     border:solid grey 2px;
     margin-right:1%;
     background-color: rgba(64, 224, 208, 0.479);

@@ -31,17 +31,20 @@ export const UserCard = ({getUser,editUser,username, displayName, about, picture
         event.preventDefault();
         editUser(state);
         // console.log(editUser())
+        setState(()=>({username:"", displayName:"", about:""}))
         alert('Update Complete')
+
       };
     
       const handleChange = (event) => {
         const inputName = event.target.name;
         const inputValue = event.target.value;
         setState((prevState) => ({ ...prevState, [inputName]: inputValue }));
+        
       };
       
       let url = "https://kwitter-api.herokuapp.com" + pictureLocation  
-    useEffect(() => {getUser(params.username)}, [getUser] );    
+    useEffect(() => {getUser(params.username)}, [params.username,] );    
     // console.log(displayName)
     return(
     <React.Fragment>
@@ -49,7 +52,7 @@ export const UserCard = ({getUser,editUser,username, displayName, about, picture
         <Card style={{ width: '24rem' }}>
             <Card.Header id="output">PROFILE</Card.Header>
                 <ListGroup variant="flush">
-                    <ListGroup.Item><img src= {url}/></ListGroup.Item>
+                    <ListGroup.Item><img src= {url} alt="profile picture"/></ListGroup.Item>
                     <ListGroup.Item>{displayName}</ListGroup.Item>
                     <ListGroup.Item>@{params.username}</ListGroup.Item>
                     <ListGroup.Item>About Me: {about} </ListGroup.Item>
@@ -105,9 +108,12 @@ export const UserCard = ({getUser,editUser,username, displayName, about, picture
               name="file"
               onChange={handlePhotoChange}
               />
-              <button type="submit">
+              <Button id="upload-button" 
+              type="submit"
+              variant="outline-primary" 
+              size="sm">
                 Upload Picture
-              </button>
+              </Button>
               
             </form>
            <div id="footer">

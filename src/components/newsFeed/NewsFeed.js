@@ -39,7 +39,7 @@ export const NewsFeed = ({ getMessages,likeMessage, messages,loading }) => {
               <Card
                id="card"
                key={message.id}
-                style={{width: '18rem'}}>
+                style={{width: '30%'}}>
                 <Card.Title
                  id="card-title">
                   {message.username}
