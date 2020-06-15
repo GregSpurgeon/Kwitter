@@ -4,7 +4,7 @@ import { Loader } from "../loader";
 import "./LoginForm.css";
 import {Link} from 'react-router-dom'
 
-export const LoginForm = ({ login, loading, error }) => {
+export const LoginForm = ({ login, loginGoogle,loading, error }) => {
   // Not to be confused with "this.setState" in classes
   const [state, setState] = useState({
     username: "",
@@ -21,6 +21,21 @@ export const LoginForm = ({ login, loading, error }) => {
     const inputValue = event.target.value;
     setState((prevState) => ({ ...prevState, [inputName]: inputValue }));
   };
+  const startAuthentication = () => {
+    const authWindow = window.open(
+      "https://kwitter-api.herokuapp.com/auth/google/login",
+      "_blank",
+      "width=500, height=500"
+    );
+    authWindow.window.opener.onmessage = (event) => {
+      authWindow.close()
+      if(!event || !event.data || !event.data.token) {
+        alert("Please log into your GOOGLE account")
+        return
+      }
+      loginGoogle(event.data);
+    }
+  }
 
   return (
     <React.Fragment>
@@ -45,6 +60,8 @@ export const LoginForm = ({ login, loading, error }) => {
         <button type="submit" disabled={loading}>
           Login
         </button>
+<br/>
+<button onClick ={startAuthentication}>login using Google</button>
         <br/>
         <h6 id="registration-link">New to us?&nbsp;
           <Link to="/register">SignUp Here</Link>

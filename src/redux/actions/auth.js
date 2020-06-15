@@ -4,6 +4,9 @@ import api from "../../utils/api";
 export const LOGIN = "AUTH/LOGIN";
 export const LOGIN_SUCCESS = "AUTH/LOGIN_SUCCESS";
 export const LOGIN_FAILURE = "AUTH/LOGIN_FAILURE";
+export const GOOGLE_LOGIN_SUCCESS = "GOOGLE_LOGIN_SUCCESS"
+export const GOOGLE_LOGIN = "GOOGLE_LOGIN"
+export const GOOGLE_LOGIN_FAILURE = "GOOGLE_LOGIN_FAILURE"
 export const LOGOUT = "AUTH/LOGOUT";
 
 /*
@@ -15,20 +18,28 @@ export const login = (credentials) => async (dispatch, getState) => {
   try {
     dispatch({ type: LOGIN });
     const payload = await api.login(credentials);
-    
     // ℹ️ℹ️This is how you woud debug the response to a requestℹ️ℹ️
     // console.log({ result })
-    dispatch({ 
-      type: LOGIN_SUCCESS,
-       payload });
+    dispatch({ type: GOOGLE_LOGIN});
+    const result = await api.useGoogleLogin()
+    console.log({result})
+    dispatch({type: LOGIN_SUCCESS, payload });
   } catch (err) {
     dispatch({
       type: LOGIN_FAILURE,
       payload: err.message,
     });
+    dispatch({
+      type: GOOGLE_LOGIN_FAILURE,
+      payload:err.message
+    })
   }
 };
 
+export const loginGoogle = (payload) => async (dispatch, getState)=>{
+  console.log(payload)
+  dispatch({type: GOOGLE_LOGIN_SUCCESS, payload})
+}
 export const logout = () => async (dispatch, getState) => {
   try {
     // We do not care about the result of logging out
