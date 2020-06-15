@@ -46,9 +46,20 @@ class API {
   }
 
   async editUser(credentials){
-    console.log(credentials.username)
+    // console.log(credentials.username)
     try {
       const result = await this.axiosInstance.patch(`/users/${credentials.username}`, {"displayName":credentials.displayName, "about":credentials.about})
+      console.log(result);
+      return result; 
+      
+    } catch (err) {
+      helpMeInstructor(err);
+    }
+  }
+
+  async putPicture(file, username){
+    try {
+      const result = await this.axiosInstance.put(`/users/${username}/picture`, file)
       console.log(result);
       return result; 
       

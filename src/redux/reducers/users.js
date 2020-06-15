@@ -1,5 +1,5 @@
 // TODO: implement
-import { GETUSER, GETUSER_SUCCESS, GETUSER_FAILURE, EDITUSER, EDITUSER_SUCCESS, EDITUSER_FAILURE, LOGOUT } from "../actions";
+import { GETUSER, GETUSER_SUCCESS, GETUSER_FAILURE, EDITUSER, EDITUSER_SUCCESS, EDITUSER_FAILURE, PUTPICTURE, PUTPICTURE_SUCCESS, PUTPICTURE_FAILURE, LOGOUT } from "../actions";
 
 // INITIAL STATE
 const INITIAL_STATE = {
@@ -42,8 +42,8 @@ export const userReducer = (state = INITIAL_STATE, action) => {
         loading: true,
       };
     case EDITUSER_SUCCESS:
-      console.log("insideReducer GetUserSuccess")
-      console.log(action.payload)
+      // console.log("insideReducer editUserSuccess")
+      // console.log(action.payload)
       return {
         ...INITIAL_STATE,
         username: action.payload.user.username,
@@ -59,6 +59,26 @@ export const userReducer = (state = INITIAL_STATE, action) => {
         error: action.payload,
         loading: false,
       };
+
+      case PUTPICTURE:
+        return {
+          ...INITIAL_STATE,
+          loading: true,
+        };
+      case PUTPICTURE_SUCCESS:
+        // console.log("insideReducer getPictureSuccess")
+        // console.log(action.payload)
+        return {
+          ...INITIAL_STATE,
+          loading: false,
+        };
+      case PUTPICTURE_FAILURE:
+        return {
+          ...INITIAL_STATE,
+          error: action.payload,
+          loading: false,
+        };
+        
     case LOGOUT:
       return {
         ...INITIAL_STATE,
