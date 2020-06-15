@@ -19,7 +19,7 @@ export const UserCard = ({getUser,editUser,username, displayName, about, picture
       setPicture(() => ({file: getTargetFile[0]}))  
     };
 
-    const handlePutPicture = (event) => {
+    const handlePutPicture = (event) => { //https://programmingwithmosh.com/javascript/react-file-upload-proper-server-side-nodejs-easy/
       event.preventDefault();
       const data = new FormData();
       data.append("picture", picture.file)
