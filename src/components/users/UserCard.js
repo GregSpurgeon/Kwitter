@@ -53,14 +53,15 @@ export const UserCard = ({getUser,editUser,username, displayName, about, picture
             <Card.Header id="output">PROFILE</Card.Header>
                 <ListGroup variant="flush">
                     <ListGroup.Item><img src= {url} alt="profile picture"/></ListGroup.Item>
-                    <ListGroup.Item>{displayName}</ListGroup.Item>
-                    <ListGroup.Item>@{params.username}</ListGroup.Item>
-                    <ListGroup.Item>About Me: {about} </ListGroup.Item>
+                    <ListGroup.Item id="output">{displayName}</ListGroup.Item>
+                    <ListGroup.Item id="output">@{params.username}</ListGroup.Item>
+                    <ListGroup.Item id="output">About Me: {about} </ListGroup.Item>
             </ListGroup>   
         </Card>
       </div>
         <form id="update-form" onSubmit={handleEditUser}>
-            <label id="formElement" htmlFor="username">Username</label>
+          <h4 id="headerFormElement">Update your profile</h4>
+            <label id="updateFormElement" htmlFor="username">Username</label>
             <input 
               type="text"
               name="username"
@@ -71,7 +72,7 @@ export const UserCard = ({getUser,editUser,username, displayName, about, picture
               required
               onChange={handleChange}
             /><br/>
-            <label id="formElement" htmlFor="displayName">DisplayName</label>
+            <label id="updateFormElement" htmlFor="displayName">DisplayName</label>
             <input 
               type="text"
               size="lg"
@@ -82,7 +83,7 @@ export const UserCard = ({getUser,editUser,username, displayName, about, picture
               required
               onChange={handleChange}
             /><br/>
-            <label id="formElement" htmlFor="about">About</label>
+            <label id="updateFormElement" htmlFor="about">About</label>
             <input 
               type="text"
               size="lg"

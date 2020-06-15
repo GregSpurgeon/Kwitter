@@ -7,7 +7,7 @@ import "../screens/Profile.css"
 export const ProfileScreen = () => (
   <>
     <MenuContainer />
-    <h3 id="profile-header">Your Profile</h3> 
+    {/* <h3 id="profile-header">Your Profile</h3>  */}
     <UserCardContainer/>
      <OtherUsersContainer />
 

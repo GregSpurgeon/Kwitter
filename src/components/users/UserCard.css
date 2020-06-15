@@ -23,6 +23,11 @@
   padding-top:-10%;
   border: black solid 1px;
 }
+#updateFormElement{
+  color:turquoise;
+  font-size: 17px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 img{
   height:100%;
   width: 100%;
@@ -30,4 +35,8 @@ img{
 #upload-button{
   border-radius: 5px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#headerFormElement{
+color:rgb(25, 168, 142);
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
