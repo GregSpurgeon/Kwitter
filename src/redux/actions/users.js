@@ -7,6 +7,9 @@ export const GETUSER_FAILURE = "USERS/GETUSER_FAILURE";
 export const EDITUSER = "USERS/EDITUSER";
 export const EDITUSER_SUCCESS = "USERS/EDITUSER_SUCCESS";
 export const EDITUSER_FAILURE = "USERS/EDITUSER_FAILURE";
+export const PUTPICTURE = "USERS/PUTPICTURE";
+export const PUTPICTURE_SUCCESS = "USERS/PUTPICTURE_SUCCESS";
+export const PUTPICTURE_FAILURE = "USERS/PUTPICTURE_FAILURE";
 export const LOGOUT = "AUTH/LOGOUT";
 
 /*
@@ -44,6 +47,24 @@ export const editUser = (credentials) => async (dispatch, getState) => {
   } catch (err) {
     dispatch({
       type: EDITUSER_FAILURE,
+      payload: err.message,
+    });
+  }
+};
+
+export const putPicture = (file, username) => async (dispatch, getState) => {
+  try {
+    dispatch({ type: PUTPICTURE });
+    const payload = await api.putPicture(file, username);
+    // console.log(payload)
+    
+    // ℹ️ℹ️This is how you woud debug the response to a requestℹ️ℹ️
+    // console.log({ result })
+    dispatch({ type: PUTPICTURE_SUCCESS, payload });
+    dispatch(getUser(username)) //refresh the page
+  } catch (err) {
+    dispatch({
+      type: PUTPICTURE_FAILURE,
       payload: err.message,
     });
   }

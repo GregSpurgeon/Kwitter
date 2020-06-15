@@ -5,13 +5,27 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import {Card} from "react-bootstrap";
 import PropTypes from "prop-types";
+import { putPicture } from "../../redux/actions";
 
 
-export const UserCard = ({getUser,editUser,username,displayName, about, pictureLocation}) => {
+export const UserCard = ({getUser,editUser,username, displayName, about, pictureLocation, putPicture}) => {
     
     let params = useParams();
     const [state, setState] = useState({username: "", displayName: "", about:""});
+    const [picture, setPicture] = useState({file: null})
     
+    const handlePhotoChange = (event) => {
+      let getTargetFile = event.target.files
+      setPicture(() => ({file: getTargetFile[0]}))  
+    };
+
+    const handlePutPicture = (event) => { //https://programmingwithmosh.com/javascript/react-file-upload-proper-server-side-nodejs-easy/
+      event.preventDefault();
+      const data = new FormData();
+      data.append("picture", picture.file)
+      putPicture(data, username);
+    }
+
     const handleEditUser = (event) => {
         event.preventDefault();
         editUser(state);
@@ -24,7 +38,8 @@ export const UserCard = ({getUser,editUser,username,displayName, about, pictureL
         const inputValue = event.target.value;
         setState((prevState) => ({ ...prevState, [inputName]: inputValue }));
       };
-
+      
+      let url = "https://kwitter-api.herokuapp.com" + pictureLocation  
     useEffect(() => {getUser(params.username)}, [getUser] );    
     // console.log(displayName)
     return(
@@ -32,6 +47,7 @@ export const UserCard = ({getUser,editUser,username,displayName, about, pictureL
         <Card style={{ width: '24rem' }}>
             <Card.Header>PROFILE</Card.Header>
                 <ListGroup variant="flush">
+                    <ListGroup.Item><img src= {url}/></ListGroup.Item>
                     <ListGroup.Item>{displayName}</ListGroup.Item>
                     <ListGroup.Item>@{params.username}</ListGroup.Item>
                     <ListGroup.Item>About Me: {about} </ListGroup.Item>
@@ -76,9 +92,20 @@ export const UserCard = ({getUser,editUser,username,displayName, about, pictureL
             > 
               Update Profile
             </Button>
+            </form>
+            <form onSubmit= {handlePutPicture}>
+              <input
+              type="file"
+              name="file"
+              onChange={handlePhotoChange}
+              />
+              <button type="submit">
+                Upload Picture
+              </button>
+              
+            </form>
            <div id="footer">
-          </div> 
-        </form>
+          </div>
 
     </React.Fragment> 
     );
