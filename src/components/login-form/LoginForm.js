@@ -30,7 +30,7 @@ export const LoginForm = ({ login, loginGoogle,loading, error }) => {
     authWindow.window.opener.onmessage = (event) => {
       authWindow.close()
       if(!event || !event.data || !event.data.token) {
-        alert("Please log into your GOOGLE account")
+        // alert("Please log into your GOOGLE account")
         return
       }
       loginGoogle(event.data);

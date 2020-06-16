@@ -52,7 +52,7 @@ export const UserCard = ({getUser,editUser,username, displayName, about, picture
         <Card style={{ width: '24rem' }}>
             <Card.Header id="output">PROFILE</Card.Header>
                 <ListGroup variant="flush">
-                    <ListGroup.Item><img src= {url} alt="profile picture"/></ListGroup.Item>
+                    <ListGroup.Item><img src= {url} alt="image dimensions less than 250x250"/></ListGroup.Item>
                     <ListGroup.Item id="output">{displayName}</ListGroup.Item>
                     <ListGroup.Item id="output">@{params.username}</ListGroup.Item>
                     <ListGroup.Item id="output">About Me: {about} </ListGroup.Item>
